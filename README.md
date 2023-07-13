@@ -1,4 +1,4 @@
-# next_word_prediction_streamlit
+# Next Word Prediction
 A web app that is capable of predicting next word on it's own.
 
 
