@@ -37,7 +37,7 @@ cd venv
 ```
 c) Clone this project 
 ```bash
-git clone https://github.com/pandeynandancse/next_word_prediction_streamlit.git
+git clone https://github.com/prakruthishekar/Word-Prediction.git
 ```
 
 d) Move into cloned directory
@@ -59,20 +59,6 @@ and then open link
 ## To Do
 1. Add More Architecture Options
 2. Trigger prediction on each time when space is pressed
-
-
-
-
-
-
-## Bug / Feature Request
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/pandeynandancse/next_word_prediction_streamlit/issues/new) by including your search query and the expected result.
-
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/pandeynandancse/next_word_prediction_streamlit/issues/new). Please include sample queries and their corresponding results.
-
-
-## Contribution
-If you'd like to do some contribution, feel free to do so by opening a pull request [here](https://github.com/pandeynandancse/next_word_prediction_streamlit/pulls). Please include sample queries and their corresponding results.
 
 
 
