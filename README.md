@@ -43,7 +43,7 @@ git clone https://github.com/prakruthishekar/Word-Prediction.git
 
 d) Move into cloned directory
 ```bash
-cd next_word_prediction_streamlit
+cd Word-Prediction
 ```
 e) Now install all requirements
 ```bash
