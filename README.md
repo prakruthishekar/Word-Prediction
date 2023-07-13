@@ -28,12 +28,13 @@ A web application that has a pretained model uncased BERT  that will be loaded w
 2. Linux User type following command in commnand line
 a) First create a virtual environment 
 ```bash
-python3.7 -m virtualenv venv
+python -m venv env
+
 ```
 b) Move to venv directory and activate environment
 ```bash
-cd venv
-. bin/activate
+source env/bin/activate
+
 ```
 c) Clone this project 
 ```bash
