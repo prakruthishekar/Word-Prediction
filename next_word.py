@@ -2,11 +2,9 @@ import os
 import streamlit as st
 import torch
 import string
-import pynput
 from transformers import BertTokenizer, BertForMaskedLM
-from pynput import keyboard
 
-@st.cache()
+@st.cache_data()
 def load_model(model_name):
   try:
     if model_name.lower() == "bert":
@@ -63,7 +61,7 @@ def get_all_predictions(text_sentence, top_clean=5):
 
 
 
-def get_prediction_eos(input_text):
+def get_prediction_eos(input_text,top_k):
   try:
     input_text += ' <mask>'
     res = get_all_predictions(input_text, top_clean=int(top_k))
@@ -75,25 +73,25 @@ def get_prediction_eos(input_text):
 
 try:
 
-  st.title("Next Word Prediction with Pytroch")
-  st.sidebar.text("Next Word Prediction")
-  
-  top_k = st.sidebar.slider("How many words do you need", 1 , 25, 1) #some times it is possible to have less words
-  print(top_k)
-  model_name = st.sidebar.selectbox(label='Select Model to Apply',  options=['BERT', 'XLNET'], index=0,  key = "model_name")
+    st.title("Next Word Prediction with Pytroch")
+    st.sidebar.text("Next Word Prediction")
+    
+    top_k = st.sidebar.slider("How many words do you need", 1 , 25, 1) #some times it is possible to have less words
+    print(top_k)
+    model_name = st.sidebar.selectbox(label='Select Model to Apply',  options=['BERT', 'XLNET'], index=0,  key = "model_name")
 
 
-  bert_tokenizer, bert_model  = load_model(model_name) 
-  input_text = st.text_area("Enter your text here")
-  #click outside box of input text to get result
-  res = get_prediction_eos(input_text)
+    bert_tokenizer, bert_model  = load_model(model_name) 
+    input_text = st.text_area("Enter your text here")
+    #click outside box of input text to get result
+    res = get_prediction_eos(input_text, top_k)
 
-  answer = []
-  print(res['bert'].split("\n"))
-  for i in res['bert'].split("\n"):
-  	answer.append(i)
-  answer_as_string = "    ".join(answer)
-  st.text_area("Predicted List is Here",answer_as_string,key="predicted_list")
+    answer = []
+    print(res['bert'].split("\n"))
+    for i in res['bert'].split("\n"):
+      answer.append(i)
+    answer_as_string = "    ".join(answer)
+    st.text_area("Predicted List is Here",answer_as_string,key="predicted_list")
 
 
 
