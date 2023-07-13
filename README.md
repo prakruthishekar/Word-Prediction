@@ -1,6 +1,8 @@
 # Next Word Prediction
 A web app that is capable of predicting next word on it's own.
 
+Click here to see the working mode [](https://word-prediction-1ego4aeko4p.streamlit.app/)
+
 
 ## Table of Content
   * [Demo](#demo)
